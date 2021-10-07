@@ -1,41 +1,21 @@
 from unittest import TestCase, main
 
-from utility import TreeNode
+from utility import LinkedList, TreeNode, list_to_linked_list
 
-def list_to_list_node(list1):
-    head = ListNode(list1[0])
-    tail = head
-    index = 1
-    while index < len(list1):
-      tail.next = ListNode(list1[index])
-      tail = tail.next
-      index += 1
-    
-    return head
- 
- 
-# Linked List node
-class ListNode:
- 
-        # Constructor to create a new node
-        def __init__(self, data):
-            self.data = data
-            self.next = None
- 
- 
+
 # Class to convert the linked list to Binary Tree
 class ListToBST:
  
     # Constructor for storing head of linked list
     # and root for the Binary Tree
     def __init__(self, list):
-        self.head = list_to_list_node(list)
+        self.head = list_to_linked_list(list).head
         self.root = None
  
     def push(self, new_data):
  
         # Creating a new linked list node and storing data
-        new_node = ListNode(new_data)
+        new_node = LinkedList(new_data)
  
         # Make next of new node as head
         new_node.next = self.head

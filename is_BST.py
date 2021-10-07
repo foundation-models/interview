@@ -4,6 +4,9 @@ import sys
 from list_to_BST import ListToBST
 from utility import TreeNode
 
+def list_to_BST(list):
+    return ListToBST(list).convertList2Binary()
+
 def isValidBinarySearchTree(root, min, max):
     if root is None:
         return True
@@ -23,10 +26,9 @@ def isValidBST(root):
 class TestPractice(TestCase):
     
     def test_is_valis_BST(self):
-        self.assertTrue(isValidBST( ListToBST([5,1,7,None,None,6,9]).convertList2Binary()))
-        self.assertFalse(isValidBST( ListToBST([5,1,6,None,None,8,9]).convertList2Binary()))
-        self.assertFalse(isValidBST(ListToBST([5,1,4,None,None,3,6]).convertList2Binary()))
-
+        self.assertTrue(isValidBST( list_to_BST([5,1,7,None,None,6,9])))
+        self.assertFalse(isValidBST( list_to_BST([5,1,6,None,None,8,9])))
+        self.assertFalse(isValidBST(list_to_BST([5,1,4,None,None,3,6])))
 
 
 if __name__ == "__main__":
