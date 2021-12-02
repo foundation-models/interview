@@ -9,6 +9,7 @@ def save_princess(N, matrix):
     moves_st = { (1,0): 'DOWN', (-1,0): 'UP', (0,1): 'RIGHT', (0,-1): 'LEFT'}
     actions = []
     visited = set()
+    # this is probably wrong
     for i, j in zip(range(N),range(N)):
         if matrix[i][j] == 'm':
             break

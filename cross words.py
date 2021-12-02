@@ -7,9 +7,6 @@ def solution(crossword, words):
     
     candidate_length = {}
     
-    
-    public 
-
     def fill_across(crosswords, i, j, word):
         for k in len(word):
             crossword[i][j + k] = word[k]
